@@ -38,7 +38,7 @@ const renderScene = SceneMap({
 
   const Icon = ({ iconName }) => {
     return <View style={{ paddingTop: 10 }}>
-      <FontAwesome name={iconName} size={24} color="white" />
+      <FontAwesome name={iconName} size={20} color="white" />
     </View>
   }
 
@@ -55,7 +55,7 @@ const renderScene = SceneMap({
       )}
       {...props}
       indicatorStyle={{ backgroundColor: COLORS.blue, height: 5 }}
-      style={{ backgroundColor:"#9DBEFF", height: 70 }}
+      style={{ backgroundColor:"#9DBEFF", height: 65 }}
     />
 
   );
