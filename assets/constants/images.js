@@ -1,5 +1,8 @@
-// export const logo = require('');
+export const profileImg = require('../images/profile.jpg');
+
+
+
 
 export default {
-    logo
+    profileImg
 };

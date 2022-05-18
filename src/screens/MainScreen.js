@@ -1,4 +1,5 @@
 import HomeScreen from './HomeScreen';
+import ProfileScreen from './ProfileScreen';
 import * as React from 'react';
 import { View, useWindowDimensions } from 'react-native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
@@ -10,13 +11,16 @@ const SearchScreen = () => (
 );
 
 const SendScreen = () => (
-  <View style={{ flex: 1, backgroundColor: COLORS.flatBlue }} />
+  <View style={{ flex: 1, backgroundColor: "white" }} />
 );
+
+
 
 const renderScene = SceneMap({
   homeScreen: HomeScreen,
   searchScreen: SearchScreen,
-  sendScreen: SendScreen
+  sendScreen: SendScreen,
+  profileScreen:ProfileScreen
 });
 
 
@@ -29,6 +33,7 @@ const renderScene = SceneMap({
     { key: 'homeScreen', title: 'Home Screen' },
     { key: 'searchScreen', title: 'Search Screen' },
     { key: 'sendScreen', title: 'send Screen' },
+    { key: 'profileScreen', title: 'profile Screen' },
   ]);
 
   const Icon = ({ iconName }) => {
@@ -44,11 +49,13 @@ const renderScene = SceneMap({
           <Icon iconName="home" /> :
           route.key == "searchScreen" ?
             <Icon iconName="search" /> :
-            <Icon iconName="send" />
+            route.key == "sendScreen" ?
+            <Icon iconName="send" />:
+            <Icon iconName="user" />
       )}
       {...props}
-      indicatorStyle={{ backgroundColor: COLORS.flatRed, height: 5 }}
-      style={{ backgroundColor: "black", height: 80 }}
+      indicatorStyle={{ backgroundColor: COLORS.blue, height: 5 }}
+      style={{ backgroundColor:"#9DBEFF", height: 70 }}
     />
 
   );
