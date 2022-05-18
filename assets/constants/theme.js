@@ -10,7 +10,7 @@ export const COLORS = {
     success: "#14C48B",
     warning: "#FF7F50", 
     black2:"#5C6B88",
-    white: "#FFFFFF",
+    white: "#F4F4F4",
     peach: '#FF615F',
     flatPurple:"#C67ADD",
     flatGreen:"#00CA72",
