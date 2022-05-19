@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet, Image } from 'react-native'
 import { COLORS, IMAGES, SIZES } from '../../assets/constants'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import AvatarImageComponent from '../components/global/AvatarImageComponent';
 
 export default function ProfileScreen(props) {
 
@@ -37,8 +38,11 @@ export default function ProfileScreen(props) {
                             alignSelf: "center",
                             marginTop: 20
                         }} >
-                            <Image style={styles.imageStyle} source={IMAGES.profileImg} />
-                        </TouchableOpacity>
+                            <AvatarImageComponent
+                            image={IMAGES.profileImg}
+                            size={100}
+                            />
+                             </TouchableOpacity>
                         <TouchableOpacity style={{
                             alignSelf: "center",
                             marginTop: 10
@@ -71,13 +75,6 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.22,
         shadowRadius: 4.22,
         elevation: 3,
-    },
-    imageStyle: {
-        height: 100,
-        width: 100,
-        borderRadius: 50,
-        borderColor: COLORS.blueDeg3,
-        borderWidth: 3
     },
     userNameStyle:{
         color: COLORS.black2,

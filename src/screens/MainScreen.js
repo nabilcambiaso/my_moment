@@ -55,7 +55,7 @@ const renderScene = SceneMap({
       )}
       {...props}
       indicatorStyle={{ backgroundColor: COLORS.blue, height: 5 }}
-      style={{ backgroundColor:"#9DBEFF", height: 65 }}
+      style={{ backgroundColor:COLORS.blueDeg3, height: 65 }}
     />
 
   );
