@@ -1,8 +1,9 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet, Image } from 'react-native'
 import { COLORS, IMAGES, SIZES } from '../../assets/constants'
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Entypo, Feather } from '@expo/vector-icons';
 import AvatarImageComponent from '../components/global/AvatarImageComponent';
+import ProfileImagesCard from '../components/cards/ProfileImagesCard';
 
 export default function ProfileScreen(props) {
 
@@ -39,16 +40,74 @@ export default function ProfileScreen(props) {
                             marginTop: 20
                         }} >
                             <AvatarImageComponent
-                            image={IMAGES.profileImg}
-                            size={100}
+                                image={IMAGES.profileImg}
+                                size={100}
                             />
-                             </TouchableOpacity>
+                        </TouchableOpacity>
                         <TouchableOpacity style={{
                             alignSelf: "center",
                             marginTop: 10
                         }} >
                             <Text style={styles.userNameStyle} >Cambiaso Nabil</Text>
                         </TouchableOpacity>
+
+                        <View
+                            style={{
+                                flexDirection: "row",
+                                justifyContent: "center",
+                                marginVertical: 20
+                            }}
+                        >
+                            <TouchableOpacity style={{
+                                paddingHorizontal: 30,
+                                paddingVertical: 5,
+                                backgroundColor: COLORS.blueDeg4,
+                                borderRadius: 15
+                            }} >
+                                <Text style={styles.textStyle} >Follow</Text>
+                            </TouchableOpacity>
+                            <View style={{
+                                position: "absolute",
+                                right: 20,
+                                flexDirection: "row"
+                            }}>
+                                <TouchableOpacity
+                                    style={{ paddingVertical: 5, marginRight: 20 }}
+                                >
+                                    <Feather name="send" size={18} color={COLORS.black2} />
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    style={{ paddingVertical: 5 }}
+                                >
+                                    <Entypo name="dots-three-vertical" size={18} color={COLORS.black2} />
+                                </TouchableOpacity>
+                            </View>
+
+                        </View>
+
+                        <View style={styles.gridRow}>
+                            <ProfileImagesCard />
+                            <ProfileImagesCard />
+                            <ProfileImagesCard />
+                        </View>
+                        <View style={styles.gridRow}>
+                            <ProfileImagesCard />
+                            <ProfileImagesCard />
+                            <ProfileImagesCard />
+                        </View>
+                        <View style={styles.gridRow}>
+                            <ProfileImagesCard />
+                            <ProfileImagesCard />
+                            <ProfileImagesCard />
+                        </View>
+                        <View style={styles.gridRow}>
+                            <ProfileImagesCard />
+                            <ProfileImagesCard />
+                            <ProfileImagesCard />
+                        </View>
+
+
+
 
                     </View>
                     <View style={{ height: 100 }}><Text> </Text></View>
@@ -76,19 +135,29 @@ const styles = StyleSheet.create({
         shadowRadius: 4.22,
         elevation: 3,
     },
-    userNameStyle:{
+    userNameStyle: {
         color: COLORS.black2,
         fontWeight: "bold",
         fontSize: 18
     },
-    scrollableCard:{
+    textStyle: {
+        color: COLORS.white,
+        fontWeight: "bold"
+    },
+    scrollableCard: {
         marginTop: -60,
         width: "100%",
         backgroundColor: "white",
         alignSelf: "center",
         borderRadius: 15,
         height: SIZES.height,
-
-
+    },
+    gridRow: {
+        flexDirection: "row",
+        justifyContent: "space-around",
+        marginTop: 10,
+        maxWidth: 380,
+        paddingHorizontal: 10
     }
+
 })
